@@ -4,4 +4,4 @@ build:
 	@gcc main.c
 
 run:
-	@.\\a.exe
+	@./a.out

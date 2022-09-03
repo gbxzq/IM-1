@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <sys/time.h>
 #include <stdlib.h>
-#include <windows.h>
 
 #define N 1200
 
@@ -37,11 +36,11 @@ void calculate(struct Event *events, int n)
     double temp = 0;
     for (int i = 0; i < N; i++)
     {
-        double randNum = randfrac();
+        double rand_num = randfrac();
 
         for (int j = 0; j < n; j++)
         {
-            if (randNum < events[j].probability + temp)
+            if (rand_num < events[j].probability + temp)
             {
                 events[j].counter += 1;
                 break;
@@ -54,8 +53,6 @@ void calculate(struct Event *events, int n)
 
 int main(void)
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
     doseed();
 
     int events_amount;
